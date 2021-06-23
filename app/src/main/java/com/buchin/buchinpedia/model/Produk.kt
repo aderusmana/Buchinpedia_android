@@ -1,8 +1,10 @@
 package com.buchin.buchinpedia.model
 
-class Produk {
+import java.io.Serializable
 
-   lateinit var nama : String = ""
-    lateinit var harga : String = ""
-    lateinit var gambar : Int = 0
+class Produk : Serializable{
+
+   var nama : String = ""
+    var harga : String = ""
+    var gambar : Int = 0
 }

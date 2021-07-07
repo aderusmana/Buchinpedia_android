@@ -4,7 +4,12 @@ import java.io.Serializable
 
 class Produk : Serializable{
 
-   var nama : String = ""
+    var id :Int = 0
+    var nama : String = ""
     var harga : String = ""
-    var gambar : Int = 0
+    var deskripsi : String = ""
+    var category_id : Int = 0
+    var image :String = ""
+    var created_at : String = ""
+    var update_at : String = ""
 }

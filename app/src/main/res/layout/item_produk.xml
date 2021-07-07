@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="15dp"
-    android:layout_marginVertical="1dp">
+    android:layout_marginVertical="1dp"
+    android:id="@+id/display">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,8 +41,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginBottom="10dp"
             android:layout_marginHorizontal="5dp"
+            android:textColor="#FF9800"
             android:text="Rp.0 "
-            android:textSize="20dp"/>
+            android:textSize="18dp"/>
 
 
     </LinearLayout>

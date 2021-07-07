@@ -3,6 +3,8 @@ package com.buchin.buchinpedia.helper
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import com.buchin.buchinpedia.model.User
+import com.google.gson.Gson
 
 class SharedPref(activity: Activity) {
     val mypref = "MAIN_PRF"
@@ -12,6 +14,8 @@ class SharedPref(activity: Activity) {
     val nama = "nama"
     val phone = "phone"
     val email = "email"
+
+    val user = "User"
 
 
     init {
@@ -26,6 +30,17 @@ class SharedPref(activity: Activity) {
         return sp.getBoolean(login,false)
     }
 
+    fun setUser(value: User){
+        val data = Gson().toJson(value,User::class.java)
+        sp.edit().putString(user,data).apply()
+
+    }
+
+    fun getUser():User?{
+        val data = sp.getString(user,null) ?: return null
+        return Gson().fromJson<User>(data,User::class.java)
+
+    }
     fun setString(key:String, value: String){
         sp.edit().putString(key,value).apply()
 

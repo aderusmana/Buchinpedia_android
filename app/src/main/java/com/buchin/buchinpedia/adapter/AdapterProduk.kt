@@ -15,6 +15,7 @@ import com.buchin.buchinpedia.activity.DetailProdukActivity
 import com.buchin.buchinpedia.activity.RegisterActivity
 import com.buchin.buchinpedia.helper.Helper
 import com.buchin.buchinpedia.model.Produk
+import com.buchin.buchinpedia.util.Config
 import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import java.text.NumberFormat
@@ -42,7 +43,7 @@ class AdapterProduk(var activity : Activity,var data : ArrayList<Produk>): Recyc
         holder.tvNama.text = data[position].nama
         holder.tvHarga.text = Helper().gantiRupiah(data[position].harga)
 //        holder.imgProduk.setImageResource(data[position].image)
-        val img_url = "http://192.168.0.125/buchinpedia/public/storage/product/" + data[position].image
+        val img_url = Config.produkUrl + data[position].image
         Picasso.get()
                 .load(img_url)
                 .placeholder(R.drawable.produk)

@@ -5,10 +5,7 @@ import com.buchin.buchinpedia.model.ResponseModel
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -36,4 +33,22 @@ interface ApiService {
 
     @GET("product")
     fun getProduct():Call<ResponseModel>
+
+    @GET("provinsi")
+    fun getProvinsi():Call<ResponseModel>
+
+    @GET("kota")
+    fun getKota(
+            @Query("id_provinsi") id :Int
+    ):Call<ResponseModel>
+
+    @GET("kecamatan")
+    fun getKecamatan(
+            @Query("id_kota") id:Int
+    ):Call<ResponseModel>
+
+    @GET("kelurahan")
+    fun getKelurahan(
+            @Query("id_kecamatan") id:Int
+    ):Call<ResponseModel>
 }

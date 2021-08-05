@@ -1,5 +1,6 @@
 package com.buchin.buchinpedia.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.buchin.buchinpedia.R
+import com.buchin.buchinpedia.activity.PengirimanActivity
 import com.buchin.buchinpedia.adapter.AdapterKeranjang
 import com.buchin.buchinpedia.helper.Helper
 import com.buchin.buchinpedia.model.Produk
@@ -85,6 +87,8 @@ class KeranjangFragment : Fragment() {
 
         }
         btnBayar.setOnClickListener {
+
+            startActivity(Intent(requireActivity(),PengirimanActivity::class.java))
 
         }
 

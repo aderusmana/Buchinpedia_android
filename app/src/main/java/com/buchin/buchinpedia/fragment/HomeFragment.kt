@@ -68,14 +68,9 @@ class HomeFragment : Fragment() {
                             listProduk = res.products
                             displayProduct()
                         }
-
                     }
-
                     override fun onFailure(call: Call<ResponseModel>, t: Throwable) {
-
                     }
-
-
                 })
     }
 

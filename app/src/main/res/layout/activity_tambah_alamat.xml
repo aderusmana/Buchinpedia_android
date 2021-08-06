@@ -25,6 +25,7 @@
                 android:background="@drawable/btn_gugel">
 
                 <EditText
+                    android:id="@+id/edt_nama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -42,11 +43,14 @@
                 android:background="@drawable/btn_gugel">
 
                 <EditText
+                    android:id="@+id/edt_telp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:textSize="14dp"
                     android:background="@null"
+                    android:inputType="number"
+                    android:maxLength="14"
                     android:hint="Nomor Telp*"/>
 
             </RelativeLayout>
@@ -59,6 +63,7 @@
                 android:background="@drawable/btn_gugel">
 
                 <EditText
+                    android:id="@+id/edt_alamat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -78,6 +83,7 @@
                 android:background="@drawable/btn_gugel">
 
                 <EditText
+                    android:id="@+id/edt_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -127,43 +133,9 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/div_kecamatan"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/btn_gugel">
-
-                <Spinner
-                    android:id="@+id/spn_kecamatan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:textSize="14dp"/>
 
 
-            </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/div_kelurahan"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/btn_gugel">
-
-                <Spinner
-                    android:id="@+id/spn_kelurahan"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:textSize="14dp"/>
-
-
-            </RelativeLayout>
 
             <ProgressBar
                 android:id="@+id/pb"
@@ -171,6 +143,26 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"/>
+
+            <RelativeLayout
+                android:id="@+id/div_kecamatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/btn_gugel">
+
+                <EditText
+                    android:id="@+id/edt_kecamatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textSize="14dp"
+                    android:background="@null"
+                    android:hint="Kecamatan*"/>
+
+
+            </RelativeLayout>
 
 
             <RelativeLayout
@@ -181,18 +173,40 @@
                 android:background="@drawable/btn_gugel">
 
                 <EditText
+                    android:id="@+id/edt_kelurahan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:textSize="14dp"
                     android:background="@null"
+                    android:hint="Kelurahan*"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/btn_gugel">
+
+                <EditText
+                    android:id="@+id/edt_pos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textSize="14dp"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:maxLength="6"
                     android:hint="Kode Pos*"/>
 
             </RelativeLayout>
 
             <Button
+                android:id="@+id/btn_simpan"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:paddingHorizontal="15dp"

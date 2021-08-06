@@ -4,5 +4,5 @@ object Config {
 
     const val baseUrl = "http://192.168.0.125/buchinpedia/public/"
     const val produkUrl = baseUrl + "storage/product/"
-    const val alamat = "https://dev.farizdotid.com/api/daerahindonesia/"
+    const val alamat = "\thttps://api.rajaongkir.com/starter/"
 }

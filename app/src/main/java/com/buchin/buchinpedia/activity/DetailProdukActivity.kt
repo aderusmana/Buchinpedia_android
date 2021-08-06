@@ -3,6 +3,8 @@ package com.buchin.buchinpedia.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.SyncStateContract.Helpers.insert
+import android.provider.SyncStateContract.Helpers.update
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -42,14 +44,30 @@ class DetailProdukActivity : AppCompatActivity() {
         btn_keranjang.setOnClickListener {
             val data = myDb.daoKeranjang().getProduk(produk.id)
 
-            if (data == null){
+            if (data == null) {
                 insert()
-            }else{
+            } else {
                 data.jumlah = data.jumlah + 1
                 update(data)
             }
-
         }
+
+            btn_beli.setOnClickListener {
+                val data = myDb.daoKeranjang().getProduk(produk.id)
+
+                if (data == null){
+                    insert()
+                }else{
+                    data.jumlah = data.jumlah + 1
+                    update(data)
+                }
+                val inten = Intent("event:keranjang")
+                LocalBroadcastManager.getInstance(this).sendBroadcast(inten)
+                onBackPressed()
+
+            }
+
+
 
         btn_favorit.setOnClickListener {
             val listNote = myDb.daoKeranjang().getAll() // get All data

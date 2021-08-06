@@ -16,17 +16,37 @@
         android:textColor="@color/black"
         android:textSize="14dp"
         android:textStyle="bold"/>
-
-    <TextView
-        android:visibility="gone"
-        android:layout_margin="15dp"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/div_kosong"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Belum Ada Daftar Alamat"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:visibility="visible"
+            android:layout_margin="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum Ada Daftar Alamat"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:visibility="visible"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Tambahkan Alamat Anda Sekarang untuk belanja \n di BuchinPedia"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_produk"
+        android:id="@+id/rv_alamat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

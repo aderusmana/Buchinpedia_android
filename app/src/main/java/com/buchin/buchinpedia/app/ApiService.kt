@@ -2,6 +2,7 @@ package com.buchin.buchinpedia.app
 
 
 import com.buchin.buchinpedia.model.ResponseModel
+import com.buchin.buchinpedia.model.rajaongkir.ResponseOngkir
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -34,12 +35,15 @@ interface ApiService {
     @GET("product")
     fun getProduct():Call<ResponseModel>
 
-    @GET("provinsi")
-    fun getProvinsi():Call<ResponseModel>
+    @GET("province")
+    fun getProvinsi(
+            @Header("key") key: String
+    ):Call<ResponseModel>
 
-    @GET("kota")
+    @GET("city")
     fun getKota(
-            @Query("id_provinsi") id :Int
+            @Header("key") key: String,
+            @Query("province") id :String
     ):Call<ResponseModel>
 
     @GET("kecamatan")
@@ -51,4 +55,17 @@ interface ApiService {
     fun getKelurahan(
             @Query("id_kecamatan") id:Int
     ):Call<ResponseModel>
+
+    // Cost
+
+    @FormUrlEncoded
+    @POST("cost")
+    fun ongkir(
+            @Header("key") key: String,
+            @Field("origin")origin:String,
+            @Field("destination")destination:String,
+            @Field("weight")weight:Int,
+            @Field("courier")courier:String
+
+    ):Call<ResponseOngkir>
 }

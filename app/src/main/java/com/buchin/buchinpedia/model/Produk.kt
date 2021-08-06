@@ -23,4 +23,5 @@ class Produk : Serializable{
     var update_at : String = ""
     var jumlah : Int = 1
     var selected : Boolean = true
+    var discount : Int = 0
 }
